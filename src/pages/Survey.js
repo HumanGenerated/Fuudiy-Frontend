@@ -7,7 +7,7 @@ import { Box, Button, Typography } from '@mui/material';
 import LanguageSwitcher from 'src/components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "axiosInstance";
+import axiosInstance from "src/axiosInstance";
 import loginBackground from 'src/assets/login_background.jpg';
 
 const Survey = () => {

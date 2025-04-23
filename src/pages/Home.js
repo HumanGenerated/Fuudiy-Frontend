@@ -5,7 +5,7 @@ import Footer from "src/components/Footer";
 import Hero from "src/components/Hero";
 import FoodItemCard from "src/components/FoodItemCard";
 import styled from "styled-components";
-import "index.css";
+import "src/index.css";
 import { useTranslation } from "react-i18next";
 import Lottie from "lottie-react";
 import loadingAnimation from "src/assets/loading_animation.json";

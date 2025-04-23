@@ -1,6 +1,6 @@
 // src/pages/Explore.js
 import React, { useState, useEffect } from "react";
-import axiosInstance from "axiosInstance";
+import axiosInstance from "src/axiosInstance";
 import axios from "axios";
 import {
   Box,

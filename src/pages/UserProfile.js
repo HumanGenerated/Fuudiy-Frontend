@@ -11,7 +11,7 @@ import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 import ProfilePictureSelector from 'src/components/ProfilePictureSelector';
 import AddIngredientAutocomplete from "src/components/AddIngredientAutocomplete";
-import axiosInstance from 'axiosInstance';  // Import the custom axios instance
+import axiosInstance from 'src/axiosInstance';  // Import the custom axios instance
 import styled from "styled-components";
 import { useParams } from 'react-router-dom';
 import Lottie from "lottie-react";

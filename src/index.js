@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import 'src/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import global_en from "./translations/en/global.json"
-import global_tr from "./translations/tr/global.json"
-import iI18Next from "i18next";
 import './i18n';
 import { ThemeProvider } from '@mui/material';
 import theme from "./styles/theme.js"
