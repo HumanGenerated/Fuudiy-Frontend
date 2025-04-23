@@ -20,9 +20,9 @@ import {
 } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Comments from "../components/Comments";
+import Header from "src/components/Header";
+import Footer from "src/components/Footer";
+import Comments from "src/components/Comments";
 import { useTranslation } from "react-i18next";
 import Lottie from "lottie-react";
 import loadingAnimation from "src/assets/loading_animation.json";

@@ -8,7 +8,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
-import LoginPopup from '../components/LoginPopup';
+import LoginPopup from './LoginPopup';
 
 const TransparentTextField = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {

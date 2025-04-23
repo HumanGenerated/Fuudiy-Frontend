@@ -7,11 +7,11 @@ import React, {
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import LanguageSwitcher from "../components/LanguageSwitcher";
+import LanguageSwitcher from "./LanguageSwitcher";
 import { Avatar } from "@mui/material";
-import LogoutPopup from "../components/LogoutPopup";
-import RefreshPopup from "../components/RefreshPopup";
-import axiosInstance from "../axiosInstance";
+import LogoutPopup from "./LogoutPopup";
+import RefreshPopup from "./RefreshPopup";
+import axiosInstance from "src/axiosInstance";
 import Tooltip from "@mui/material/Tooltip";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Badge from '@mui/material/Badge';

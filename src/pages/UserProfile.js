@@ -6,17 +6,17 @@ import EditIcon from '@mui/icons-material/Edit';
 import CancelIcon from '@mui/icons-material/Cancel';
 import CheckIcon from '@mui/icons-material/Check';
 import AddIcon from "@mui/icons-material/Add";
-import FoodInProfile from '../components/FoodInProfile';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import ProfilePictureSelector from '../components/ProfilePictureSelector';
-import AddIngredientAutocomplete from "../components/AddIngredientAutocomplete";
-import axiosInstance from '../axiosInstance';  // Import the custom axios instance
+import FoodInProfile from 'src/components/FoodInProfile';
+import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
+import ProfilePictureSelector from 'src/components/ProfilePictureSelector';
+import AddIngredientAutocomplete from "src/components/AddIngredientAutocomplete";
+import axiosInstance from 'src/axiosInstance';  // Import the custom axios instance
 import styled from "styled-components";
 import { useParams } from 'react-router-dom';
 import Lottie from "lottie-react";
 import loadingAnimation from "src/assets/loading_animation.json"; // adjust path if needed
-import ConnectionModal from "../components/ConnectionModal";
+import ConnectionModal from "src/components/ConnectionModal";
 
 // Add these styled components to match the Home component's structure
 const PageContainer = styled.div`
