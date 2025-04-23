@@ -1,6 +1,6 @@
 // Comments.js
 import React, { useState, useEffect } from "react";     
-import axiosInstance from "src/axiosInstance"; // Use your custom axios instance
+import axiosInstance from "axiosInstance"; // Use your custom axios instance
 import {
   Box,
   Typography,

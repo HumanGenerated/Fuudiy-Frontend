@@ -11,7 +11,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { Avatar } from "@mui/material";
 import LogoutPopup from "./LogoutPopup";
 import RefreshPopup from "./RefreshPopup";
-import axiosInstance from "src/axiosInstance";
+import axiosInstance from "axiosInstance";
 import Tooltip from "@mui/material/Tooltip";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Badge from '@mui/material/Badge';
