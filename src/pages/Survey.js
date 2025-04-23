@@ -8,7 +8,7 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../axiosInstance";
-import loginBackground from '../assets/login_background.jpg';
+import loginBackground from 'src/assets/login_background.jpg';
 
 const Survey = () => {
     const { t, i18n } = useTranslation("global");
