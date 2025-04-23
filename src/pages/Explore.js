@@ -26,8 +26,8 @@ import {
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import Header from "src/components/Header";
+import Footer from "src/components/Footer";
 
 const API_BASE_URL = "http://localhost:8000";
 

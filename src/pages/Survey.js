@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import CheckboxQuestion from 'components/ui/CheckboxQuestion';
-import RadioMatrix from 'components/ui/RadioMatrix';
-import TextQuestion from 'components/ui/TextQuestion';
-import ScoreQuestion from 'components/ui/ScoreQuestion';
+import CheckboxQuestion from 'src/components/ui/CheckboxQuestion';
+import RadioMatrix from 'src/components/ui/RadioMatrix';
+import TextQuestion from 'src/components/ui/TextQuestion';
+import ScoreQuestion from 'src/components/ui/ScoreQuestion';
 import { Box, Button, Typography } from '@mui/material';
-import LanguageSwitcher from 'components/LanguageSwitcher';
+import LanguageSwitcher from 'src/components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "axiosInstance";
-import loginBackground from 'assets/login_background.jpg';
+import loginBackground from 'src/assets/login_background.jpg';
 
 const Survey = () => {
     const { t, i18n } = useTranslation("global");

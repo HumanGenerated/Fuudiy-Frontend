@@ -19,10 +19,10 @@ import {
 import { MdEmail as EmailIcon } from "react-icons/md";
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
-import Frame from 'components/Frame';
-import Footer from 'components/Footer';
+import Frame from 'src/components/Frame';
+import Footer from 'src/components/Footer';
 
-import LanguageSwitcher from 'components/LanguageSwitcher';
+import LanguageSwitcher from 'src/components/LanguageSwitcher';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 

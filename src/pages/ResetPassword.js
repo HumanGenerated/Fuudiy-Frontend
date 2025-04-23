@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Box, Button, TextField, Typography, useTheme } from '@mui/material';
-import Frame from 'components/Frame';
-import Footer from 'components/Footer';
+import Frame from 'src/components/Frame';
+import Footer from 'src/components/Footer';
 
 import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from 'components/LanguageSwitcher';
+import LanguageSwitcher from 'src/components/LanguageSwitcher';
 
 const API_BASE_URL = "http://localhost:8000";
 
