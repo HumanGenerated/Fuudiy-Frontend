@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import FoodItemCard from "../components/FoodItemCard";
+import Header from "src/components/Header";
+import Footer from "src/components/Footer";
+import Hero from "src/components/Hero";
+import FoodItemCard from "src/components/FoodItemCard";
 import styled from "styled-components";
-import "../index.css";
+import "src/index.css";
 import { useTranslation } from "react-i18next";
 import Lottie from "lottie-react";
-import loadingAnimation from "../assets/loading_animation.json";
+import loadingAnimation from "src/assets/loading_animation.json";
 import { useLocation, useNavigate } from "react-router-dom"; // 👈 Add these
-import LoginPopup from "../components/LoginPopup";
+import LoginPopup from "src/components/LoginPopup";
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
