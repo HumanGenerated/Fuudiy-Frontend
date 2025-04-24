@@ -8,7 +8,7 @@ import LanguageSwitcher from 'src/components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "src/axiosInstance";
-import loginBackground from '../assets/login_background.jpg';
+import loginBackground from 'src/Assets/login_background.jpg';
 
 const Survey = () => {
     const { t, i18n } = useTranslation("global");
@@ -61,7 +61,7 @@ const Survey = () => {
     const resolveMediaPath = (path) => {
         if (!path) return null;
         try {
-            return path.startsWith('/') ? `${process.env.PUBLIC_URL}${path}` : require(`../assets/${path}`);
+            return path.startsWith('/') ? `${process.env.PUBLIC_URL}${path}` : require(`src/Assets/${path}`);
         } catch (error) {
             console.error(`Error resolving media path: ${path}`, error);
             return null;

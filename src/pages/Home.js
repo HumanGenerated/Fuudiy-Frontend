@@ -8,7 +8,7 @@ import styled from "styled-components";
 import "src/index.css";
 import { useTranslation } from "react-i18next";
 import Lottie from "lottie-react";
-import loadingAnimation from "../assets/loading_animation.json";
+import loadingAnimation from "src/Assets/loading_animation.json";
 import { useLocation, useNavigate } from "react-router-dom"; // 👈 Add these
 import LoginPopup from "src/components/LoginPopup";
 const PageContainer = styled.div`

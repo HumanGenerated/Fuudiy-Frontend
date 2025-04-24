@@ -15,7 +15,7 @@ import axiosInstance from 'src/axiosInstance';  // Import the custom axios insta
 import styled from "styled-components";
 import { useParams } from 'react-router-dom';
 import Lottie from "lottie-react";
-import loadingAnimation from "../assets/loading_animation.json"; // adjust path if needed
+import loadingAnimation from "src/Assets/loading_animation.json"; // adjust path if needed
 import ConnectionModal from "src/components/ConnectionModal";
 
 // Add these styled components to match the Home component's structure
