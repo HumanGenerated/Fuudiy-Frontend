@@ -1,5 +1,5 @@
 import React from 'react';
-import loginBackground from 'src/assets/login_background.jpg';
+import loginBackground from '../assets/login_background.jpg';
 import { 
   Container,
   Paper,

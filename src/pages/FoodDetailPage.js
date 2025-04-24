@@ -25,7 +25,7 @@ import Footer from "src/components/Footer";
 import Comments from "src/components/Comments";
 import { useTranslation } from "react-i18next";
 import Lottie from "lottie-react";
-import loadingAnimation from "src/assets/loading_animation.json";
+import loadingAnimation from "../assets/loading_animation.json";
 import styled from "styled-components";
 
 
