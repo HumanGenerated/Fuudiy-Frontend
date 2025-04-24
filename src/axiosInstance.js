@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://fuudiy.com:8000", // Update with your API URL
+  baseURL:  process.env.REACT_APP_API_URL || '/api', // Update with your API URL
 });
 
 // Request Interceptor: Attach Token to Headers

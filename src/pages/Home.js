@@ -41,6 +41,8 @@ const FoodSection = styled.section`
   padding: 2rem;
 `;
 
+const API_BASE_URL =  process.env.REACT_APP_API_URL || '/api';
+
 const Home = () => {
   const [topFoods, setTopFoods] = useState([]);
   const [topFoodsCountry, setTopFoodsCountry] = useState([]);
@@ -65,7 +67,7 @@ const Home = () => {
     const fetchFoods = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://fuudiy.com:8000/food/top-5-foods", {
+        const response = await axios.get(`${API_BASE_URL}/food/top-5-foods`, {
           headers: { "Cache-Control": "no-cache" },
         });
 
@@ -77,7 +79,7 @@ const Home = () => {
           }
         }
 
-        const response_by_country = await axios.get("http://fuudiy.com:8000/food/top-foods-by-country", {
+        const response_by_country = await axios.get(`${API_BASE_URL}/food/top-foods-by-country`, {
           headers: { "Cache-Control": "no-cache" },
         });
 

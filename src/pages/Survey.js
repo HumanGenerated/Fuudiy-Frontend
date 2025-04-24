@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "src/axiosInstance";
 import loginBackground from 'src/Assets/login_background.jpg';
 
+const API_BASE_URL =  process.env.REACT_APP_API_URL || '/api';
+
 const Survey = () => {
     const { t, i18n } = useTranslation("global");
     const [questions, setQuestions] = useState([]);
@@ -115,7 +117,7 @@ const Survey = () => {
             const token = localStorage.getItem('accessToken');
             const payload = { responses };
 
-            const response = await fetch('http://fuudiy.com:8000/survey/submit', {
+            const response = await fetch(`${API_BASE_URL}/survey/submit`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

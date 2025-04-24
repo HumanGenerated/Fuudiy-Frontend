@@ -9,6 +9,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+const API_BASE_URL =  process.env.REACT_APP_API_URL || '/api';
+
 const FoodInProfile = ({
   food,
   onRateChange,
@@ -36,7 +38,7 @@ const FoodInProfile = ({
     const fetchSignedImageUrl = async () => {
       try {
         if (food.url_id) {
-          const response = await axios.get(`http://fuudiy.com:8000/food/image/${food.url_id}`);
+          const response = await axios.get(`${API_BASE_URL}/food/image/${food.url_id}`);
           setImageUrl(response.data.image_url);
         }
       } catch (error) {
@@ -56,7 +58,7 @@ const FoodInProfile = ({
     if (!food.comment || translatedComment) return;
     try {
       setIsTranslating(true);
-      const response = await axios.post("http://fuudiy.com:8000/translation/", {
+      const response = await axios.post(`${API_BASE_URL}/translation/`, {
         text: food.comment,
         target_lang: i18n.language,
       });

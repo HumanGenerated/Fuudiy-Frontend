@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import LoginPopup from './LoginPopup';
 
+const API_BASE_URL =  process.env.REACT_APP_API_URL || '/api';
+
 const TransparentTextField = styled(TextField)(({ theme }) => ({
   '& .MuiOutlinedInput-root': {
     backgroundColor: 'rgba(255,255,255,0.15)',
@@ -42,7 +44,7 @@ export default function SearchBar({ isLoggedIn }) {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://fuudiy.com:8000/api/search?q=${encodeURIComponent(q)}`
+        `${API_BASE_URL}/api/search?q=${encodeURIComponent(q)}`
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const { results } = await res.json();

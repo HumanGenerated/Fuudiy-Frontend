@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 
+const API_BASE_URL =  process.env.REACT_APP_API_URL || '/api';
+
 const defaultImage = `${process.env.PUBLIC_URL}/default-food.png`;
 
 const FoodItemCard = ({ food }) => {
@@ -35,7 +37,7 @@ const FoodItemCard = ({ food }) => {
     if (food.url_id) {
       setLoadingUrl(true);
       axios
-        .get(`http://fuudiy.com:8000/food/image/${food.url_id}`)
+        .get(`${API_BASE_URL}/food/image/${food.url_id}`)
         .then(({ data }) => {
           if (!canceled && data.image_url) {
             setImageUrl(data.image_url);

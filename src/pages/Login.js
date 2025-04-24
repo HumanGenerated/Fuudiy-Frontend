@@ -22,7 +22,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import Frame from 'src/components/Frame';
 
-const API_BASE_URL = "http://fuudiy.com:8000";
+const API_BASE_URL = process.env.REACT_APP_API_URL || '/api';
 const Login = () => {
   const { t, i18n } = useTranslation("global");
   const navigate = useNavigate();
