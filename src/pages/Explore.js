@@ -29,7 +29,7 @@ import PropTypes from "prop-types";
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 
-const API_BASE_URL = "fuudiy.com:8000";
+const API_BASE_URL = "http://fuudiy.com:8000";
 
 const Explore = () => {
   const { t } = useTranslation("global");

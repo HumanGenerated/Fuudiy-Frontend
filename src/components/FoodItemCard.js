@@ -35,7 +35,7 @@ const FoodItemCard = ({ food }) => {
     if (food.url_id) {
       setLoadingUrl(true);
       axios
-        .get(`fuudiy.com:8000/food/image/${food.url_id}`)
+        .get(`http://fuudiy.com:8000/food/image/${food.url_id}`)
         .then(({ data }) => {
           if (!canceled && data.image_url) {
             setImageUrl(data.image_url);

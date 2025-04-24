@@ -65,7 +65,7 @@ const Home = () => {
     const fetchFoods = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("fuudiy.com:8000/food/top-5-foods", {
+        const response = await axios.get("http://fuudiy.com:8000/food/top-5-foods", {
           headers: { "Cache-Control": "no-cache" },
         });
 
@@ -77,7 +77,7 @@ const Home = () => {
           }
         }
 
-        const response_by_country = await axios.get("fuudiy.com:8000/food/top-foods-by-country", {
+        const response_by_country = await axios.get("http://fuudiy.com:8000/food/top-foods-by-country", {
           headers: { "Cache-Control": "no-cache" },
         });
 
