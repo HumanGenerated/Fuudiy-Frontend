@@ -26,7 +26,7 @@ import LanguageSwitcher from 'src/components/LanguageSwitcher';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "fuudiy.com:8000";
 
 const Register = () => {
   const { t, i18n } = useTranslation("global");

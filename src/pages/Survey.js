@@ -115,7 +115,7 @@ const Survey = () => {
             const token = localStorage.getItem('accessToken');
             const payload = { responses };
 
-            const response = await fetch('http://localhost:8000/survey/submit', {
+            const response = await fetch('fuudiy.com:8000/survey/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
