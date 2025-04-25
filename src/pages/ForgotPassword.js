@@ -12,7 +12,7 @@ import Footer from 'src/components/Footer';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from 'src/components/LanguageSwitcher';
 
-const API_BASE_URL = "https://fuudiy.com:8000";
+const API_BASE_URL = "https://fuudiy.com/api";
 
 const ForgotPassword = () => {
     const { t, i18n } = useTranslation("global");

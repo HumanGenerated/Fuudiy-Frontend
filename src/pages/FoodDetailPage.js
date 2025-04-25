@@ -29,7 +29,7 @@ import loadingAnimation from "src/Assets/loading_animation.json";
 import styled from "styled-components";
 
 
-const API_BASE_URL = 'https://fuudiy.com:8000'; 
+const API_BASE_URL = 'https://fuudiy.com/api'; 
 
 const PageContainer = styled.div`
   display: flex;

@@ -33,7 +33,7 @@ const MainContent = styled.div`
   padding-top: 35px;
 `;
 
-const API_BASE_URL = 'https://fuudiy.com:8000'; 
+const API_BASE_URL = 'https://fuudiy.com/api'; 
 
 const UserProfile = () => {
   const { USERNAME } = useParams();
