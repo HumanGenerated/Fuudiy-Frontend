@@ -42,7 +42,7 @@ export default function SearchBar({ isLoggedIn }) {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://fuudiy.com:8000/api/search?q=${encodeURIComponent(q)}`
+        `https://fuudiy.com:8000/api/search?q=${encodeURIComponent(q)}`
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const { results } = await res.json();
