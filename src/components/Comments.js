@@ -170,10 +170,11 @@ const Comments = ({ onRatingUpdate }) => {
   
       // Re-fetch all comments to update the list with the new comment
       await fetchComments();
-  
+
       // Reset the comment form
       setNewComment("");
       setRating(0);
+      setHasCommented(true); // ⬅️ Immediately disable further commenting
     } catch (error) {
       console.error("Error adding comment:", error);
       if (error.response) {

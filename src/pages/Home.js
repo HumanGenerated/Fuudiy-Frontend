@@ -9,7 +9,8 @@ import "../index.css";
 import { useTranslation } from "react-i18next";
 import Lottie from "lottie-react";
 import loadingAnimation from "../assets/loading_animation.json";
-
+import { useLocation, useNavigate } from "react-router-dom"; // 👈 Add these
+import LoginPopup from "../components/LoginPopup";
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,7 +47,18 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { t } = useTranslation("global");
-
+  const [showLoginPopup, setShowLoginPopup] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    // Show popup if redirected due to auth
+    if (location.state?.reason === "loginRequired") {
+      setShowLoginPopup(true);
+      // Clear state after first use
+      navigate(location.pathname, { replace: true });
+    }
+  }, [location, navigate]);
   useEffect(() => {
     let isMounted = true;
 
@@ -94,12 +106,19 @@ const Home = () => {
       isMounted = false;
     };
   }, []);
-
+  const handleLoginPopupClose = () => setShowLoginPopup(false);
+  const handleLoginRedirect = () => navigate('/login');
   return (
     <PageContainer>
       <Header />
       {/* Main Content */}
       <MainContent>
+      <LoginPopup
+          open={showLoginPopup}
+          onClose={handleLoginPopupClose}
+          onLogin={handleLoginRedirect}
+          messageKey="accessProfile" // Optional translation key
+        />
         <Hero />
         <Title>
           <h2>{t("topFoods")}</h2>

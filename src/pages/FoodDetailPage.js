@@ -47,7 +47,7 @@ const MainContent = styled.div`
 
 const FoodDetailPage = () => {
   const { id } = useParams();
-  const { t } = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
   const [foodDetails, setFoodDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -56,7 +56,7 @@ const FoodDetailPage = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [currentUser, setCurrentUser] = useState(null);
   const [hasCommented, setHasCommented] = useState(false);
-
+  const [keywordTranslations, setKeywordTranslations] = useState([]);
 
   useEffect(() => {
     const fetchFoodDetails = async () => {
@@ -109,7 +109,20 @@ const FoodDetailPage = () => {
     fetchFoodDetails();
     fetchCurrentUser();
   }, [id, t]);
+
+  useEffect(() => {
+    const fetchTranslations = async () => {
+      try {
+        const res = await fetch(`${process.env.PUBLIC_URL}/keyword_translations.json`);
+        const data = await res.json();
+        setKeywordTranslations(data);
+      } catch (err) {
+        console.error("Failed to load keyword translations", err);
+      }
+    };
   
+    fetchTranslations();
+  }, []);
   
   // Function to update the food rating from the Comments component
   const updateFoodRating = (newRating, votes) => {
@@ -203,9 +216,20 @@ const FoodDetailPage = () => {
                 }} 
               />              
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center", marginTop: 2, justifyContent: { xs: "center", md: "flex-start" } }}>
-                {foodDetails.keywords.map((keyword, index) => (
-                  <Chip key={index} label={keyword} sx={{ backgroundColor: "#f1f1f1", fontWeight: "bold", fontSize: "1rem", padding: "8px" }} />
-                ))}
+                {foodDetails.keywords.map((keyword, index) => {
+                  const translation = keywordTranslations.find(item => item.en === keyword);
+                  const displayKeyword = i18n.language === "tr"
+                    ? translation?.tr || keyword
+                    : translation?.en || keyword;
+
+                  return (
+                    <Chip
+                      key={index}
+                      label={displayKeyword}
+                      sx={{ backgroundColor: "#f1f1f1", fontWeight: "bold", fontSize: "1rem", padding: "8px" }}
+                    />
+                  );
+                })}
               </Box>
             </Box>
           </Stack>

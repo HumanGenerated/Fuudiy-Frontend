@@ -75,16 +75,16 @@ export default function SearchBar({ isLoggedIn }) {
   // handle selection
   const handleSelect = (_, option) => {
     if (!option) return;
-    
     if (option.type === 'user' && !isLoggedIn) {
-      // Store the selected option for after login
-      setPendingOption(option);
-      
       // Close the autocomplete dropdown
       setOpen(false);
       
       // Show login requirement
       setLoginPopupOpen(true);
+      return;
+    }
+
+    if(option.type === undefined){
       return;
     }
     
@@ -147,8 +147,17 @@ export default function SearchBar({ isLoggedIn }) {
             </Box>
           )}
           renderInput={(params) => (
-            <TransparentTextField
-              {...params}
+          <TransparentTextField
+            {...params}
+              // 1) watch for Enter:
+              onKeyDown={e => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();       // stop form‐submit
+                  if (options.length > 0) {
+                    handleSelect(e, options[0]);
+                  }
+                }
+              }}
               placeholder={t('searchPlaceholder')}
               variant="outlined"
               size="small"

@@ -15,9 +15,9 @@ i18n
       tr: { global: translationTR },
     },
     ns: ['global'],
-    defaultNS: 'global',
+    defaultNS: 'global',                                                
     fallbackLng: 'en',
-    detection: {
+    detection: { 
       order: ['localStorage','navigator'],
       lookupLocalStorage: 'language',   // key in localStorage
       caches: ['localStorage'],         // cache selection back to LS

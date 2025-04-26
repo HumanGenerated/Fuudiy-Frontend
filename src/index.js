@@ -10,18 +10,7 @@ import iI18Next from "i18next";
 import './i18n';
 import { ThemeProvider } from '@mui/material';
 import theme from "./styles/theme.js"
-iI18Next.init({
-  interpolation :{escapeValue: false},
-  lng: "en",
-  resources:{
-    en: {
-      global: global_en,
-    },
-    tr:{
-      global: global_tr,
-    },
-  },
-});
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

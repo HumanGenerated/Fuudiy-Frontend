@@ -7,7 +7,7 @@ const AddIngredientAutocomplete = ({ onAdd }) => {
   const [ingredients, setIngredients] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [selected, setSelected] = useState(null);
-  const { i18n } = useTranslation(); // To detect current language
+  const { t, i18n } = useTranslation("global");
 
   useEffect(() => {
     fetch("/ingredients.json")
@@ -61,7 +61,7 @@ const AddIngredientAutocomplete = ({ onAdd }) => {
           <TextField
             {...params}
             variant="outlined"
-            label="Add ingredient"
+            label={t('addIngredient')}
             size="small"
             sx={{ flex: 1 }}
           />

@@ -1,4 +1,33 @@
 [
+  { "en": "nuts (e.g., almonds, walnuts)", "tr": "çerez (ör. badem, ceviz)"},
+  { "en": "dairy", "tr": "süt ürünleri"},
+  { "en": "eggs", "tr": "Yumurta"},
+  { "en": "soy", "tr": "Soya"},
+  { "en": "wheat", "tr": "Buğday"},
+  {
+    "en": "almonds",
+    "tr": "badem"
+  },
+  {
+    "en": "walnuts",
+    "tr": "ceviz"
+  },
+  {
+    "en": "cashews",
+    "tr": "kaju"
+  },
+  {
+    "en": "coconuts",
+    "tr": "hindistan cevizi"
+  },
+  {
+    "en": "hazelnuts",
+    "tr": "Kestane"
+  },
+  {
+    "en": "pistachio",
+    "tr": "Antep fıstığı"
+  },
   {
     "en": "absolut vodka",
     "tr": "Absolut Votka"
@@ -2421,7 +2450,7 @@
   },
   {
     "en": "chipotle hot sauce",
-    "tr": "Chipotle Sıcak Sos"
+    "tr": "Chipotle Acı Sos"
   },
   {
     "en": "chipotle mayonnaise",
@@ -4865,67 +4894,67 @@
   },
   {
     "en": "hot chicken broth",
-    "tr": "Sıcak tavuk suyu"
+    "tr": "Acılı tavuk suyu"
   },
   {
     "en": "hot chili beans",
-    "tr": "Sıcak biber"
+    "tr": "Acı biber"
   },
   {
     "en": "hot chili pepper",
-    "tr": "Sıcak biber"
+    "tr": "Acı biber"
   },
   {
     "en": "hot chili powder",
-    "tr": "Sıcak biber tozu"
+    "tr": "Acı biber tozu"
   },
   {
     "en": "hot chili sauce",
-    "tr": "Sıcak biber sosu"
+    "tr": "Acı biber sosu"
   },
   {
     "en": "hot green chili pepper",
-    "tr": "Sıcak yeşil biber"
+    "tr": "Acı yeşil biber"
   },
   {
     "en": "hot green wasabi peas",
-    "tr": "Sıcak yeşil wasabi bezelye"
+    "tr": "Acı yeşil wasabi bezelye"
   },
   {
     "en": "hot ketchup",
-    "tr": "sıcak ketçap"
+    "tr": "Acılı ketçap"
   },
   {
     "en": "hot mustard",
-    "tr": "sıcak hardal"
+    "tr": "Acılı hardal"
   },
   {
     "en": "hot paprika",
-    "tr": "Sıcak kırmızı biber"
+    "tr": "Acı kırmızı biber"
   },
   {
     "en": "hot pork sausage",
-    "tr": "Sıcak domuz sosis"
+    "tr": "Acı domuz sosis"
   },
   {
     "en": "hot red chili pepper",
-    "tr": "Sıcak kırmızı biber"
+    "tr": "Acı kırmızı biber"
   },
   {
     "en": "hot salsa",
-    "tr": "Sıcak Salsa"
+    "tr": "Acı Salsa"
   },
   {
     "en": "hot sauce",
-    "tr": "sıcak sos"
+    "tr": "Acı sos"
   },
   {
     "en": "hot sausage",
-    "tr": "Sıcak sosis"
+    "tr": "Acılı sosis"
   },
   {
     "en": "hot sausage patties",
-    "tr": "Sıcak sosis köftesi"
+    "tr": "Acı sosis köftesi"
   },
   {
     "en": "hungarian paprika",
@@ -10862,5 +10891,29 @@
   {
     "en": "zucchini",
     "tr": "kabak"
+  },
+  {
+    "en": "Almonds",
+    "tr": "Badem"
+  },
+  {
+    "en": "Walnuts",
+    "tr": "Ceviz"
+  },
+  {
+    "en": "Cashew",
+    "tr": "Kaju"
+  },
+  {
+    "en": "Coconuts",
+    "tr": "Hindistan cevizi"
+  },
+  {
+    "en": "Hazelnuts",
+    "tr": "Kestane"
+  },
+  {
+    "en": "Pistachio",
+    "tr": "Antep fıstığı"
   }
 ]

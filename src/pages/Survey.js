@@ -8,6 +8,8 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../axiosInstance";
+import loginBackground from '../assets/login_background.jpg';
+
 const Survey = () => {
     const { t, i18n } = useTranslation("global");
     const [questions, setQuestions] = useState([]);
@@ -21,16 +23,16 @@ const Survey = () => {
 
         const fetchUserData = async () => {
             try {
-              const response = await axiosInstance.get("/auth/users/me");
-              if (response.data.data[0].has_completed_survey) {
-                navigate("/"); // redirect away if already completed
-              }
+                const response = await axiosInstance.get("/auth/users/me");
+                if (response.data.data[0].has_completed_survey) {
+                    navigate("/"); // redirect away if already completed
+                }
             } catch (err) {
-              console.error("Could not verify user survey status", err);
+                console.error("Could not verify user survey status", err);
             }
-          };
-        
-          fetchUserData();
+        };
+
+        fetchUserData();
         const fetchQuestions = async () => {
             try {
                 const response = await fetch('/questions.json');
@@ -150,114 +152,125 @@ const Survey = () => {
 
     return (
         <>
-            <Box position='relative' >
-                <LanguageSwitcher color='white' changeLanguage={(lng) => i18n.changeLanguage(lng)} />
-            </Box>
-            <Box 
+<Box sx={{backgroundImage: `url(${loginBackground})`,  backgroundSize: 'cover', minHeight: '100vh',backgroundPosition: 'center',}} >
+            <Box
                 sx={{
-                    width: 600,
-                    borderRadius: 15,
-                    bgcolor: 'background.main',
-                    textAlign: 'center',
-                    padding: 5,
-                    margin: 'auto'
-                    , borderRadius: '50px'
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: '100vh', // This makes sure the container takes at least the full viewport height
+                    width: '100%',
                 }}
             >
-                <Typography variant="h6" color='grey' sx={{ marginBottom: 3 }}>
-                    {t('user_pref')}
-                </Typography>
-
-                {/* Error Message */}
-                {errorMessage && (
-                    <Typography color="error" sx={{ marginBottom: 2 }}>
-                        {errorMessage}
+                <Box
+                   sx={{
+                    width: 600,
+                    bgcolor: 'background.main',
+                    textAlign: 'center',
+                    padding: 3,
+                    borderRadius: '50px'
+                }}
+                  
+                  
+                ><Box position='relative' sx={{mb:5}}>
+                        <LanguageSwitcher color='grey' changeLanguage={(lng) => i18n.changeLanguage(lng)} />
+                    </Box>
+                    <Typography variant="h6" color='grey' sx={{ marginBottom: 3 }}>
+                        {t('user_pref')}
                     </Typography>
-                )}
 
-
-                {/* Render the current question dynamically */}
-                {currentQuestion.type === 'checkbox' && (
-                    <CheckboxQuestion
-                        question={currentQuestion.question}
-                        options={currentQuestion.options}
-                        selected={responses[currentQuestion.id] || []}
-                        onChange={(option, isChecked) => {
-                            const canonicalValue = option.value;
-                            const currentSelections = responses[currentQuestion.id] || [];
-                            const newSelections = isChecked
-                                ? [...currentSelections, canonicalValue]
-                                : currentSelections.filter((item) => item !== canonicalValue);
-                            handleResponseChange(currentQuestion.id, newSelections);
-                        }}
-                        twoColumns={currentQuestion.twoColumns || false}
-                        language={language}
-                    />
-                )}
-
-                {currentQuestion.type === 'radio' && currentQuestion.rows && currentQuestion.columns && (
-                    <RadioMatrix
-                        question={currentQuestion.question}
-                        rows={currentQuestion.rows}
-                        columns={currentQuestion.columns}
-                        onChange={(row, value) => {
-                            const newResponses = {
-                                ...(responses[currentQuestion.id] || {}),
-                                [row]: value
-                            };
-                            handleResponseChange(currentQuestion.id, newResponses);
-                        }}
-                        language={language}
-                        values={responses[currentQuestion.id] || {}}
-                    />
-                )}
-
-                {currentQuestion.type === 'score' && (
-                    <ScoreQuestion
-                        question={currentQuestion.question}
-                        value={responses[currentQuestion.id] || 0}
-                        onChange={(value) => handleResponseChange(currentQuestion.id, value)}
-                        media={resolveMediaPath(currentQuestion.media)}
-                        language={language}
-                    />
-                )}
-
-                {currentQuestion.type === 'text' && (
-                    <TextQuestion
-                        question={currentQuestion.question}
-                        value={responses[currentQuestion.id] || ''}
-                        onChange={(value) => handleResponseChange(currentQuestion.id, value)}
-                        language={language}
-                    />
-                )}
-
-                {/* Navigation Buttons */}
-                <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 4, gap: 2 }}>
-                <Button
-                        variant="contained"
-                        onClick={goToPreviousQuestion}
-                        disabled={currentQuestionIndex === 0}
-                    >
-                        {t('previous')}
-                    </Button>
-
-                    {currentQuestionIndex < questions.length - 1 ? (
-                        <Button
-                            variant="contained"
-                            onClick={goToNextQuestion}
-                        >
-                            {t('next')}
-                        </Button>
-                    ) : (
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            onClick={handleSubmit}
-                        >
-                            {t('submit')}
-                        </Button>
+                    {/* Error Message */}
+                    {errorMessage && (
+                        <Typography color="error" sx={{ marginBottom: 2 }}>
+                            {errorMessage}
+                        </Typography>
                     )}
+
+
+                    {/* Render the current question dynamically */}
+                    {currentQuestion.type === 'checkbox' && (
+                        <CheckboxQuestion
+                            question={currentQuestion.question}
+                            options={currentQuestion.options}
+                            selected={responses[currentQuestion.id] || []}
+                            onChange={(option, isChecked) => {
+                                const canonicalValue = option.value;
+                                const currentSelections = responses[currentQuestion.id] || [];
+                                const newSelections = isChecked
+                                    ? [...currentSelections, canonicalValue]
+                                    : currentSelections.filter((item) => item !== canonicalValue);
+                                handleResponseChange(currentQuestion.id, newSelections);
+                            }}
+                            twoColumns={currentQuestion.twoColumns || false}
+                            language={language}
+                        />
+                    )}
+
+                    {currentQuestion.type === 'radio' && currentQuestion.rows && currentQuestion.columns && (
+                        <RadioMatrix
+                            question={currentQuestion.question}
+                            rows={currentQuestion.rows}
+                            columns={currentQuestion.columns}
+                            onChange={(row, value) => {
+                                const newResponses = {
+                                    ...(responses[currentQuestion.id] || {}),
+                                    [row]: value
+                                };
+                                handleResponseChange(currentQuestion.id, newResponses);
+                            }}
+                            language={language}
+                            values={responses[currentQuestion.id] || {}}
+                        />
+                    )}
+
+                    {currentQuestion.type === 'score' && (
+                        <ScoreQuestion
+                            question={currentQuestion.question}
+                            value={responses[currentQuestion.id] || 0}
+                            onChange={(value) => handleResponseChange(currentQuestion.id, value)}
+                            media={resolveMediaPath(currentQuestion.media)}
+                            language={language}
+                        />
+                    )}
+
+                    {currentQuestion.type === 'text' && (
+                        <TextQuestion
+                            question={currentQuestion.question}
+                            value={responses[currentQuestion.id] || ''}
+                            onChange={(value) => handleResponseChange(currentQuestion.id, value)}
+                            language={language}
+                        />
+                    )}
+
+                    {/* Navigation Buttons */}
+                    <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: 4, gap: 2 }}>
+                        <Button
+                            variant="contained"
+                            onClick={goToPreviousQuestion}
+                            disabled={currentQuestionIndex === 0}
+                        >
+                            {t('previous')}
+                        </Button>
+
+                        {currentQuestionIndex < questions.length - 1 ? (
+                            <Button
+                                variant="contained"
+                                onClick={goToNextQuestion}
+                            >
+                                {t('next')}
+                            </Button>
+                        ) : (
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                onClick={handleSubmit}
+                            >
+                                {t('submit')}
+                            </Button>
+                        )}
+                    </Box>
                 </Box>
+            </Box>
             </Box>
         </>
     );

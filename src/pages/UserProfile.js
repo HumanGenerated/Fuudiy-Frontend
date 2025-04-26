@@ -622,7 +622,7 @@ const UserProfile = () => {
                   {displayedDislikedIngredients.map((ingredient, index) => (
                     <Chip
                       key={index}
-                      label={getLocalizedIngredient(ingredient)}
+                      label={getLocalizedIngredient(ingredient).toLowerCase()}
                       {...(editingDisliked ? { onDelete: () => handleRemoveIngredient(ingredient) } : {})}
                       sx={{ backgroundColor: "#f1f1f1", fontWeight: "bold", fontSize: "14px", py: 0.5, px: 1 }}
                     />
@@ -702,7 +702,7 @@ const UserProfile = () => {
                   {(editingAllergies ? editedAllergies : allergies).map((allergy, index) => (
                     <Chip
                       key={index}
-                      label={getLocalizedIngredient(allergy)}
+                      label={getLocalizedIngredient(allergy).toLowerCase()}
                       {...(editingAllergies ? { onDelete: () => handleRemoveAllergy(allergy) } : {})}
                       sx={{ backgroundColor: "#ffe5e5", fontWeight: "bold", fontSize: "14px", py: 0.5, px: 1 }}
                     />
@@ -749,18 +749,24 @@ const UserProfile = () => {
               <Typography variant="h6" marginBottom={2}>
                 {t("ratedFoods")}
               </Typography>            
-              <Box display="flex" flexDirection="column" gap={2}>
-                {ratedFoodDetails.map((ratedFood, index) => (
-                  <FoodInProfile 
-                    key={index} 
-                    food={ratedFood} 
-                    onRateChange={handleRateChange}
-                    readOnly={!isOwnProfile} 
-                    ingredientsList={ingredientsList}
-                    onCommentUpdate={handleCommentUpdate}
-                  />
-                ))}
-              </Box>
+              {ratedFoodDetails.length > 0 ? (
+                <Box display="flex" flexDirection="column" gap={2}>
+                  {ratedFoodDetails.map((ratedFood, index) => (
+                    <FoodInProfile 
+                      key={index} 
+                      food={ratedFood} 
+                      onRateChange={handleRateChange}
+                      readOnly={!isOwnProfile} 
+                      ingredientsList={ingredientsList}
+                      onCommentUpdate={handleCommentUpdate}
+                    />
+                  ))}
+                </Box>
+              ) : (
+                <Typography variant="body2" color="textSecondary">
+                  {t("noRatedFoods")}
+                </Typography>
+              )}
             </Paper>
 
             <Paper elevation={3} sx={{ flex: 1, padding: 3 }}>

@@ -26,7 +26,8 @@
   "logout": "Çıkış Yap",
   "title": "Eşsiz Lezzetleri Keşfedin",
   "subtitle": "Dünya mutfağını ve yemeklerini keşfedin",
-  "searchPlaceholder": "Yemekleri veya mutfakları arayın...",
+  "addIngredient": "İçerik ekleyin",
+  "searchPlaceholder": "Yemekleri veya kullanıcıları arayın...",
   "topFoods": "Popüler Yemekler",
   "topFoodsCountry": "Ülkelere Göre Popüler Yemekler",
   "trendingCuisines": "Popüler Mutfaklar",
@@ -61,9 +62,10 @@
   "loginRequired": {
     "toComment": "Yorum eklemek için giriş yapmalısınız",
     "toView": "Kullanıcı profili görüntülemek için giriş yapmalısınız",
-    "default": "Bu özelliği kullanabilmek için giriş yapmalısınız"
+    "default": "Bu özelliği kullanabilmek için giriş yapmalısınız",
+    "accessProfile": "Bir profili görüntülemek için giriş yapmalısınız."
   },
-  "pleaseLoginTo": "Lütfen giriş yapın",
+  "or": "ya da",
   "wannaTryFoods": "Denemek İstediklerim",
   "noWannaTryFoods": "Listede henüz hiç yemek yok.",
   "alreadyCommentedMessage": "Bu yemeğe daha önce zaten yorum yazdınız.",
@@ -105,16 +107,18 @@
       "preparing": "Yemek maceran hazırlanıyor...",
       "searching_cuisine": "{{country}} mutfağı aranıyor..."
     },
-      "selectCuisine": "Mutfak Seçiniz",
-      "dietaryPreferences": "Diet Tercihleri",
-      "diet": {
-        "filter": "Filtrele",
-        "none": "Kısıt yok",
-        "vegetarian": "Vejeteryan",
-        "vegan": "Vegan",
-        "seafood": "Deniz Ürünü Yok",
-        "halal": "Helal",
-        "warning": "Bu filtre %100 güvenilir değildir. Lütfen yine de malzemeleri kontrol ediniz :)"
+    "selectCuisine": "Mutfak Seçiniz",
+    "dietaryPreferences": "Diet Tercihleri",
+    "diet": {
+      "filter": "Filtrele",
+      "none": "Kısıt yok",
+      "vegetarian": "Vejeteryan",
+      "vegan": "Vegan",
+      "seafood": "Deniz Ürünü Yok",
+      "halal": "Helal",
+      "diary": "Süt Ürünleri Yok",
+      "nuts": "Yemiş Yok",
+      "warning": "Bu filtre %100 güvenilir değildir. Lütfen yine de malzemeleri kontrol ediniz :)"
     },
     "score": "Skor",
     "rating": "Puan",
@@ -132,21 +136,21 @@
   "typeToSearch": "Aramak için yazın",
   "country": {
     "Spanish": "İspanya",
-    "Mexican":"Meksika",
-    "Vietnamese":"Vietnam",
-    "Thai":"Tayland",
-    "Turkish":"Türkiye",
-    "Korean":"Kore",
-    "Italian":"İtalya",
-    "Japanese":"Japon",
-    "French":"Fransa",
-    "Chinese":"Çin",
-    "American":"Amerika",
-    "Brazilian":"Brezilya",
-    "Indian":"Hindistan",
-    "Greek":"Yunanistan",
-    "German":"Almanya",
-    "British":"İngiliz" 
+    "Mexican": "Meksika",
+    "Vietnamese": "Vietnam",
+    "Thai": "Tayland",
+    "Turkish": "Türkiye",
+    "Korean": "Kore",
+    "Italian": "İtalya",
+    "Japanese": "Japon",
+    "French": "Fransa",
+    "Chinese": "Çin",
+    "American": "Amerika",
+    "Brazilian": "Brezilya",
+    "Indian": "Hindistan",
+    "Greek": "Yunanistan",
+    "German": "Almanya",
+    "British": "İngiliz"
   },
   "food_ingredients":{
     "absolutvodka":"Absolut Votka",
@@ -1342,6 +1346,11 @@
     "herbalsyrup":"bitkisel şurup",
     "herbedcroutons":"otlak krutonlar",
     "herbs":"otlar",
+    "nuts": "yemiş", 
+    "dairy": "süt ürünleri", 
+    "eggs": "yumurta",
+    "soy": "soya", 
+    "wheat": "buğday", 
     "herbsofchoice":"Seçim bitkileri",
     "herdezredsalsa":"Herdez kırmızı salsa",
     "herringfillets":"ringa balığı filetoları",
@@ -1807,7 +1816,7 @@
     "olakesbutter":"o Göller Tereyağı",
     "oatmeal":"yulaf ezmesi",
     "obrienpotatoes":"Obrien patates",
-    "of mint":"nane",
+    "ofmint":"nane",
     "okra":"bamya",
     "oldelpasotomatoes&chilies":"Eski El Paso Domates ve Biber",
     "oleo":"margarin",
@@ -2854,7 +2863,10 @@
     "zinf":"zinf",
     "zitipasta":"Ziti makarna",
     "zitirigati":"Ziti Rigati",
-    "zucchini":"kabak"
+    "zucchini":"kabak",
+  "walnut": "Ceviz",
+  "cashew": "Kaju",
+  "hazelnut": "Kestane"
   },
   "survey_popup": {
     "title": "📝 Anketinizi Tamamlayın",
@@ -2868,5 +2880,8 @@
     "stay_logged_in": "Evet, buradayım",
     "logout": "Hayır, çıkış yap"
   },
-  "google_login": "Google ile Giriş Yap"
+  "google_login": "Google ile Giriş Yap",
+  "pleaseLoginTo": "Devam etmek için lütfen giriş yapın.",
+  "noRatedFoods": "Henüz oy verdiğiniz bir yemek yok."
+
 }

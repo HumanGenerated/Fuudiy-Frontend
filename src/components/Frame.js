@@ -1,12 +1,11 @@
 import React from 'react';
 import loginBackground from '../assets/login_background.jpg';
-
 import { 
-  Box,
   Container,
   Paper,
   Typography,
-  styled
+  styled,
+  useTheme
 } from '@mui/material';
 
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -15,16 +14,9 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   alignItems: 'center',
   minHeight: '100vh',
   backgroundColor: 'rgba(239, 237, 185, 0.89)', // Fallback
-  backgroundImage: `url(${loginBackground})`,
-  backgroundSize: 'cover',
+  backgroundImage: `url(${loginBackground})`,  backgroundSize: 'cover',
   backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-  paddingLeft: '38%',
-  
-  [theme.breakpoints.down('xl')]: { paddingLeft: '32%' },
-  [theme.breakpoints.down('lg')]: { paddingLeft: '22%' },
-  [theme.breakpoints.down('md')]: { paddingLeft: '15%' },
-  [theme.breakpoints.down('sm')]: { paddingLeft: '0' },
+  padding: theme.spacing(2),
 }));
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
@@ -35,10 +27,14 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   color: theme.palette.background.main,
   backdropFilter: 'blur(70px)',
   borderRadius: '30px',
-  padding: theme.spacing(0.5),
-  width: '100%',
+  padding: theme.spacing(0.5), // Reduced padding to create tight fit
+  margin: '0 auto',
+  display: 'flex',
+  flexDirection: 'column',
+  width: 'auto',
+  minWidth: 300,
   maxWidth: 450,
-  
+
 }));
 
 const FormBox = styled('form')(({ theme }) => ({
@@ -49,24 +45,27 @@ const FormBox = styled('form')(({ theme }) => ({
   boxShadow: theme.shadows[4],
   backdropFilter: 'blur(20px)',
   width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
 }));
 
-const Frame = ({ title, onSubmit, children , sx = {}}) => {
+const Frame = ({ title, onSubmit, children, sx = {} }) => {
+  const theme = useTheme();
+
   return (
-    <StyledContainer maxWidth={false} >
+    <StyledContainer maxWidth={false}>
       <StyledPaper elevation={0}>
-      <FormBox onSubmit={onSubmit} sx={sx}>
+        <FormBox onSubmit={onSubmit} sx={sx}>
           <Typography 
-            variant="h3" 
+            variant="h4"
             sx={{ 
               textAlign: 'center',
-              mb: 4, mt:2,
-              color: theme => theme.palette.primary.main
+              color: theme.palette.primary.main,
+              mt:2,mb:2
             }}
           >
             {title}
           </Typography>
-          
           {children}
         </FormBox>
       </StyledPaper>

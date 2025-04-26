@@ -488,13 +488,14 @@ const DropdownItem = styled.div`
 
 const RequestsPanel = styled.div`
   position: absolute;
-  top: 50px; /* just below the heart icon */
-  right: 35px; /* shift slightly to the left */
+  top: 40px;
+  right: 0;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 12px;
-  width: 240px;
+  width: 260px;
+  max-width: 90vw;
   z-index: 999;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
@@ -502,7 +503,7 @@ const RequestsPanel = styled.div`
     content: "";
     position: absolute;
     top: -8px;
-    right: 35px; /* adjust to align with heart */
+    right: 15px; /* aligns the caret with the heart icon */
     border-width: 0 8px 8px 8px;
     border-style: solid;
     border-color: transparent transparent #ddd transparent;
@@ -512,7 +513,7 @@ const RequestsPanel = styled.div`
     content: "";
     position: absolute;
     top: -7px;
-    right: 35px;
+    right: 15px; /* same as above for inner caret */
     border-width: 0 7px 7px 7px;
     border-style: solid;
     border-color: transparent transparent #fff transparent;
