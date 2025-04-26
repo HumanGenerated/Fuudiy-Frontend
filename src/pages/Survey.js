@@ -163,15 +163,13 @@ const Survey = () => {
                 }}
             >
                 <Box
-                   sx={{
-                    width: 600,
-                    bgcolor: 'background.main',
-                    textAlign: 'center',
-                    padding: 3,
-                    borderRadius: '50px'
-                }}
-                  
-                  
+                    sx={{
+                        width: 600,
+                        bgcolor: 'background.main',
+                        textAlign: 'center',
+                        padding: 5,
+                        borderRadius: '50px'
+                    }}
                 ><Box position='relative' sx={{mb:5}}>
                         <LanguageSwitcher color='grey' changeLanguage={(lng) => i18n.changeLanguage(lng)} />
                     </Box>
